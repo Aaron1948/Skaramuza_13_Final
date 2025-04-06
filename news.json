@@ -1,0 +1,22 @@
+[
+    {
+        "titulo": "Noticia 1",
+        "descripcion": "Groenlandia decide su futuro en medio del deseo de independencia y las amenazas de Trump.",
+        "enlace": "https://www.rtve.es/noticias/20250310/groenlandia-decide-futuro-medio-deseo-independencia-amenazas-trump/16481508.shtml"
+    },
+    {
+        "titulo": "Noticia 2",
+        "descripcion": "La Fiscalía Anticorrupción abre una investigación a Vox por financiación ilegal.",
+        "enlace": "https://www.rtve.es/noticias/20250310/fiscalia-anticorrupcion-abre-investigacion-a-vox-por-financiacion-ilegal/16483806.shtml"
+    },
+    {
+        "titulo": "Noticia 3",
+        "descripcion": "Zapatero pide un debate racional sobre el gasto en defensa y dice que le preocupa el envío...",
+        "enlace": "https://www.rtve.es/noticias/20250310/zapatero-preocupacion-ucrania-envio-tropas/16484110.shtml"
+    },
+    {
+        "titulo": "Noticia 4",
+        "descripcion": "La mujer de 78 años asesinada en Jaén, tercera víctima por violencia machista de 2025.",
+        "enlace": "https://www.rtve.es/noticias/20250310/mujer-78-anos-asesinada-jaen-tercera-victima-violencia-machista-2025/16484934.shtml"
+    }
+]

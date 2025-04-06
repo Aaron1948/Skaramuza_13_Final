@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- METAETIQUETAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eskaramuza13</title>
+    <meta name="robots" content="index, nofollow">
+    <meta name="Author" content="Aaron Chaves Alfonso">
+    <meta name="description" content="Pagina Web de una comunidad gamer, con tienda fisica">
+    <meta name="keywords" content="gamer, comunidad, raid, valencia, compra, perifericos">
+    <meta name="revisit-after" content="3 days">
+    <meta name="category" content="Comunidad gamer, videojuegos">
+    <meta name="locality" content="Valencia">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/estilos.css">
+    <!-- ICONO -->
+    <link rel="icon" type="image/png" href="favicon.ico?v=2">
+    <!-- CSS de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <!-- CSS de Leaflet Routing Machine (para la ruta) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css">
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <header>
+        <!-- NAVBAR -->
+        <nav class="navigationBar">
+            <!-- Logo de la pagina -->
+            <img src="../assets/images/logos/thumbnail_logo_web_Aarón_separado.png" class="logo" width="1890" height="1417" alt="logo de la pagina">
+            <h1 id="titulo">Skaramuza13</h1>
+            <ul class="navigationBarList">
+                <li class="dropdown">
+                    <a href="../index.html" class="enlace">Inicio</a>
+                    <ul class="submenu">
+                        <li><a href="../index.html#subopcion1" class="enlace">BIENVENIDOS</a></li>
+                        <li><a href="../index.html#subopcion2" class="enlace">LOCALIZACION</a></li>
+                        <li><a href="../index.html#subopcion3" class="enlace">SETUPS</a></li>
+                        <li><a href="../index.html#subopcion4" class="enlace">NOTICIAS</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../views/galeria.html" class="enlace">Galeria</a>
+                </li>
+                <li>
+                    <a href="../views/contacto.html" class="enlace active">Contacto</a>
+                </li>
+                <li>
+                    <a href="../views/presupuesto.html" class="enlace">Presupuesto</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+    <!-- CONTACTO -->
+    <h2>Ubicacion Online</h2>
+
+    <!-- Contenedor para el mapa -->
+    <div id="map"></div>
+
+    <!-- Información de contacto -->
+    <div class="contact-info">
+        <h3>Datos de Contacto:</h3>
+        <p>Dirección: Av. de los Condes de Soto Ameno, Alicante</p>
+        <p>Teléfono: +123 456 789</p>
+        <p>Email: Skaramuza13@hotmail.com</p>
+    </div>
+    <!-- CANVAS PARTICLES -->
+    <canvas id="particlesCanvas"></canvas>
+    <!-- FOOTER-->
+    <div class="footer">
+        <footer>
+            <p>Todos los Derechos Reservados</p>
+            <a href="https://twitter.com/Skaramuza13" target="_blank"><img class="x-image" src="../assets/images/logos/logo_twitter.png" alt="logo de X" height="980" width="980"></a>
+            <a href="https://facebook.com/Skaramuza13" target="_blank"><img class="f-image" src="../assets/images/logos/logo_facebooooooook.png" alt="logo de facebook" height="250" width="250"></a>
+        </footer>
+    </div>
+    <!-- Scripts de Leaflet y Routing Machine -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <!-- SCRIPT PARTICLES -->
+    <script src="../js/particulas.js"></script>
+    <!-- H1 OPACITY -->
+    <script src="../js/h1.js"></script>
+    <!-- LOCALIZACION -->
+     <script src="../js/Localizacion.js"></script>
+</body>
+</html>

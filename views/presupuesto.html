@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- METAETIQUETAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eskaramuza13</title>
+    <meta name="robots" content="index, nofollow">
+    <meta name="Author" content="Aaron Chaves Alfonso">
+    <meta name="description" content="Pagina Web de una comunidad gamer, con tienda fisica">
+    <meta name="keywords" content="gamer, comunidad, raid, valencia, compra, perifericos">
+    <meta name="revisit-after" content="3 days">
+    <meta name="category" content="Comunidad gamer, videojuegos">
+    <meta name="locality" content="Valencia">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/estilos.css">
+    <!-- ICONO -->
+    <link rel="icon" type="image/png" href="../favicon.ico">
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <header>
+        <!-- NAVBAR -->
+        <nav class="navigationBar">
+            <!-- Logo de la pagina -->
+            <img src="../assets/images/logos/thumbnail_logo_web_Aarón_separado.png" class="logo" width="1890" height="1417" alt="logo de la pagina">
+            <h1 id="titulo">Skaramuza13</h1>
+            <ul class="navigationBarList">
+                <li class="dropdown">
+                    <a href="../index.html" class="enlace">Inicio</a>
+                    <ul class="submenu">
+                        <li><a href="../index.html#subopcion1" class="enlace">BIENVENIDOS</a></li>
+                        <li><a href="../index.html#subopcion2" class="enlace">LOCALIZACION</a></li>
+                        <li><a href="../index.html#subopcion3" class="enlace">SETUPS</a></li>
+                        <li><a href="../index.html#subopcion4" class="enlace">NOTICIAS</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../views/galeria.html" class="enlace">Galeria</a>
+                </li>
+                <li>
+                    <a href="../views/contacto.html" class="enlace">Contacto</a>
+                </li>
+                <li>
+                    <a href="../views/presupuesto.html" class="enlace active">Presupuesto</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </header>
+    <!-- FORMULARIO Y PRESUPUESTO -->
+     
+    <form id="presupuestoForm" onsubmit="return false;">
+        <!-- Sección 1: Datos de contacto -->
+        <div class="form-section">
+            <h2>Datos de Contacto</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+            
+            <label for="telefono">Teléfono de contacto:</label>
+            <input type="text" id="telefono" name="telefono" required>
+            
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Sección 2: Presupuesto -->
+        <div class="form-section">
+            <h2>Presupuesto</h2>
+
+            <!-- Producto -->
+            <label for="producto">Producto:</label>
+            <select id="producto" name="producto" onchange="calcularPresupuesto()">
+                <option value="70">(24h)Entrada Boxeo + Martillo - 70€</option>
+                <option value="100">(24h)Entrada Maquinas Arcade + SetUp - 100€</option>
+                <option value="150">Todos los Eventos - 150€</option>
+            </select>
+
+            <!-- Plazo -->
+            <label for="plazo">Plazo (meses):</label>
+            <input type="number" id="plazo" name="plazo" min="1" onchange="calcularPresupuesto()">
+
+            <!-- Descuentos de 1 a 12 Meses -->
+            <label>1 Mes 30%, 6 o menos 20% , 12 Meses 10%</label>
+
+            <!-- Extras -->
+            <label>Extras:</label>
+            <input type="checkbox" id="extra1" name="extras" value="25" onchange="calcularPresupuesto()"> Acompañante (+25€)<br>
+            <input type="checkbox" id="extra2" name="extras" value="50" onchange="calcularPresupuesto()"> Entrada Regalo 24h (+50€)<br>
+            <input type="checkbox" id="extra3" name="extras" value="120" onchange="calcularPresupuesto()"> 1 año Socio-VIP (+120€)<br>
+
+            <!-- Presupuesto Final -->
+            <label for="presupuestoFinal">Presupuesto Final:</label>
+            <input type="text" id="presupuestoFinal" name="presupuestoFinal" readonly>
+        </div>
+
+        <!-- Condiciones y Envío -->
+        <div class="form-section">
+            <label for="condiciones">
+                <input type="checkbox" id="condiciones" required> Acepto las condiciones de privacidad
+            </label><br>
+            
+            <button type="button" onclick="enviarFormulario()">Enviar</button>
+            <button type="reset">Reiniciar</button>
+        </div>
+    </form>
+
+    <!-- Cuadro de error -->
+    <div id="errorBox" class="error-box" style="display:none;"></div>
+    
+    
+    
+    
+
+    <!-- CANVAS PARTICLES -->
+    <canvas id="particlesCanvas"></canvas>
+    <!-- FOOTER-->
+    <div class="footer">
+        <footer>
+            <p>Todos los Derechos Reservados</p>
+            <a href="https://twitter.com/Skaramuza13" target="_blank"><img class="x-image" src="../assets/images/logos/logo_twitter.png" alt="logo de X" height="980" width="980"></a>
+            <a href="https://facebook.com/Skaramuza13" target="_blank"><img class="f-image" src="../assets/images/logos/logo_facebooooooook.png" alt="logo de facebook" height="250" width="250"></a>
+        </footer>
+    </div>
+
+    <!-- SCRIPT PARTICLES -->
+    <script src="../js/particulas.js"></script>
+    <!-- H1 OPACITY -->
+    <script src="../js/h1.js"></script>
+    <script src="../js/formulario1.js"></script>
+</body>
+</html>

@@ -1,0 +1,784 @@
+/*******************************************GENERAL*********************************************************/
+/***********************************************************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: black;
+    overflow-y: auto;          
+    overflow-x: hidden;
+    font-size: 16px;           
+    line-height: 1.5;
+    padding-top: 80px;
+    /*margin-top: 50px; */
+    margin-top: 40px;
+    box-sizing: border-box;        
+  }
+  
+  img, video, canvas {
+    max-width: 100%; 
+    height: auto; 
+  }
+
+    
+
+/*********************************************FUENTES*******************************************************/
+/***********************************************************************************************************/
+
+@font-face {
+    font-family: "Teko";
+    src: url(../Fonts/Teko-VariableFont_wght.ttf);
+}
+
+
+@font-face {
+    font-family: "Lexend";
+    src: url(../Fonts/Lexend-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "SixtyFour";
+    src: url(../Fonts/SixtyfourConvergence-Regular-VariableFont_BLED\,SCAN\,XELA\,YELA.ttf);
+}
+
+
+/*************************************** LOGO *********************************************************/
+/******************************************************************************************************/
+
+.logo{
+  width: 150px;
+  height: 100px;
+  margin-left: 3.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 5px;
+}
+
+
+
+/***********************************************HEADER***************************************************/
+/********************************************************************************************************/
+
+
+/*************************************** P, H1,H2, Span **************************************************/
+
+p{
+  text-align: center;
+  color: white;
+  font-size: 1.1rem;
+  font-family: "Lexend";
+  margin: 30px;
+  text-indent: 0.5rem;
+  padding: 10px;
+
+}
+
+h1{
+  color: rgb(233, 104, 44);
+  font-family: "Teko";
+  text-shadow: 2px 2px rgb(221, 223, 123);
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-style: italic;
+  margin-top: 2rem;
+  margin-left: 200px;
+  text-align: center;
+  z-index: 3;
+  position: relative;
+  padding: 10px;
+    
+}
+
+#titulo{
+  transition: opacity 0.5s ease-in-out;
+
+}
+
+h2{
+  text-align: center;
+  font-size: 1.1rem;
+  font-family: "Lexend";
+  z-index: 2;
+  color: #FFFDD0;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin-top: 90px;
+}
+
+.bienvenida{
+  font-family: "Lexend";
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  z-index: 2;
+}
+
+h3{
+    font-family: "Lexend";
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 80px;
+    text-decoration:underline;
+}
+
+span{
+    color: gold;
+    white-space: nowrap;
+    overflow: hidden ;
+}
+
+
+hr{
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  margin-top: 1.5rem;
+  color: rgb(235, 225, 173);
+  /*margin: 250px auto;*/
+}
+
+.tienda-fisica{
+  text-decoration: underline;
+  text-transform: uppercase;
+
+}
+
+
+#subopcion4{
+  margin-bottom: 80px;
+}
+
+/****************************************** NAVBAR *********************************************************/
+/***********************************************************************************************************/
+
+.enlace{
+  letter-spacing: 2px;
+  /*margin-bottom: 10px;*/
+  font-weight: 900;
+  color: rgb(235, 225, 173);
+  padding: 10px;
+  /*margin-bottom: 0;*/
+}
+.enlace:hover{
+  color: rgb(221, 96, 96);
+}
+
+.active{
+  color: rgb(186, 186, 230);
+}
+  
+.navigationBar {  
+  border: 1px solid black;
+  background: linear-gradient(to bottom, black 90%, rgb(235, 225, 173)); 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  z-index: 1000;                                  
+  position: fixed;                                
+  top: 0;                                         
+  width: 100%;                                    
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  /*padding: 10px 20px;*/
+}
+
+.navigationBarList{
+  display: flex;
+  justify-content: center;
+  /*text-align: center;*/
+  align-items: center;
+  margin-top: 0;
+}
+.navigationBarList, ul, li, a{
+  list-style-type: none;
+  text-decoration: none;
+  color: rgb(235, 225, 173);
+  text-transform: uppercase;  
+  text-shadow: 1px 1px rgb(214, 209, 141);
+  z-index: 2;
+  /*margin-top: 1rem;*/
+  margin: 0;
+}
+
+.navigationBarList a {
+  font-size: 0.9rem;
+  margin-right: 50px;
+  text-decoration: none;
+  color: rgb(235, 225, 173);
+  padding: 10px;
+}
+
+/* Hover sobre los enlaces */
+
+.navigationBarList a:hover {
+  color: rgb(221, 96, 96);
+}
+
+.navigationBarList .active {
+  color: rgb(186, 186, 230);
+}
+
+/* Estilos del contenedor principal */
+
+.container-princ{
+  color: white;
+  z-index: 2;
+  padding: 10px;
+}
+
+/******************************* INICIO DEPLEGABLE DROPDOWN **************************************/
+/*************************************************************************************************/
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .active{
+  color: rgb(186, 186, 230);
+}
+
+.submenu{
+  list-style-type: none;
+  display: none;                      
+  position: absolute;
+  background: black;                
+  /*top: 5%;*/
+  top: 100%;
+  left: 0;
+  border: 1px solid rgb(235,225,173);
+  z-index: 3;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.submenu li {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.submenu li a{
+  color: rgb(235,225,173);
+  text-decoration: none;
+  font-family: "Lexend";
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 20px;
+  padding: 10px 15px;
+}
+
+.submenu li a:hover {
+  background: rgb(221, 96, 96);     
+  color: white;
+}
+
+/* Mostrar el submenú al pasar el ratón */
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+/************************************** CANVAS PARTICLES *****************************************/
+/*************************************************************************************************/
+  
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/**************************************** SLIDER ***************************************************/
+/****************************************************************************************************/
+
+.contenedor-slider{
+  position: relative;
+  margin: 0 auto;
+  z-index: 2;  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  max-width: 800px;
+  padding: 0px 40px;
+  margin-top: 3rem;
+  padding-top: 10px;
+}
+
+.slider {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+/* Botones de navegación */
+
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev {
+  left: -450px;
+}
+
+.prev img{
+  width: 4%;
+  border-style: none;
+  margin-top: 20px;
+}
+
+.next img{
+  width: 4%;
+  margin-top: 20px;
+}
+
+.next {
+  right: -450px;
+}
+
+.prev:hover, .next:hover {
+  background-color: black;
+
+}
+
+/********************************** IMAGENES INDEX ****************************************/
+/******************************************************************************************/
+
+.setup1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.setup1 img{
+  width: 500px;
+  height: 300px;
+  transition: transform 0.5s ease;
+  cursor: zoom-in;
+  z-index: 2;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  margin: auto;
+}
+
+.setup1 img:hover{
+  transform: scale(1.2);
+}
+
+.setup2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.setup2 img{
+  width: 500px;
+  height: 300px;
+  transition: transform 0.5s ease;
+  cursor: zoom-in;
+  z-index: 2;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  margin: auto;
+}
+
+.setup2 img:nth-of-type(1):hover{
+  transform: translateX(100px) scale(1.2);
+}
+
+.setup2 img:nth-of-type(2):hover{
+  transform: translateX(-100px) scale(1.2);
+}
+
+/********************************** LOCALIZACION ************************************/
+/************************************************************************************/
+
+.localidad{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 25px;
+  padding-top: 25px;
+}
+
+.localidad img{
+  border-radius: 15px;
+  border: 2px solid rgb(117, 116, 116);
+}
+
+
+/******************************** CURSOR IMAGEN LOCAL ********************************/
+
+.localidad img {
+  transition: transform 0.3s ease; 
+  cursor: zoom-in; 
+  z-index: 1;
+  width: 25%;
+}
+  
+.localidad img:hover {
+  transform: scale(1.5);
+  z-index: 2; 
+}
+
+
+
+/************************************** FOOTER ******************************************/
+/****************************************************************************************/
+
+.footer{
+  border: 2px solid black;
+  background: linear-gradient(to top, black 90%, rgb(235, 225, 173));
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  z-index: 4;
+}
+
+
+.footer p{
+  margin: 20px;
+  text-decoration: double;
+  text-transform: uppercase;
+  color: rgb(235, 225, 173);
+  margin-top: 4rem;
+}
+
+.footer img{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.f-image{
+  width: 100px;
+  height: 100px;
+  filter: invert(1);
+  z-index: 4;
+  margin-top: 5px;
+}
+
+.x-image{
+  width: 50px;
+  height: 50px;
+  filter: invert(1);
+  z-index: 4;
+}
+
+.footer footer{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.footer footer .x-image{
+  margin-top: 4rem;
+}
+
+.footer footer .f-image{
+  margin-top: 2.4rem;
+}
+
+/************************************* GALERIA ********************************************/
+/******************************************************************************************/
+/******************************************************************************************/
+
+/*** GALERIA 1***/
+
+.galeria1 img{
+  border-radius: 20px;
+  max-width: 60%;
+  height: auto;
+  padding: 20px;
+  margin-left: 5rem;
+}
+
+.galeria1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/**** GALERIA 2 ***/
+
+.galeria2 img{
+  border-radius: 20px;
+  max-width: 60%;
+  height: auto;
+  padding: 20px;
+  margin-left: 5rem;
+}
+.galeria2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+}
+
+/*** Galeria 3 ***/
+
+.galeria3 img{
+  border-radius: 20px;
+  max-width: 60%;
+  height: auto;
+  padding: 20px;
+  margin-left: 5rem;
+}
+.galeria3{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+}
+
+/*** Galeria ***/
+
+.galeria4 img{
+  border-radius: 20px;
+  max-width: 60%;
+  height: auto;
+  padding: 20px;
+  margin-left: 5rem;
+}
+.galeria4{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+}
+
+.perifericos{
+  margin:auto;
+  margin-top: 90px;
+}
+
+/*************************************** NOTICIAS **************************************/
+/**************************************************************************************/
+
+
+.news-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 150px;
+  display: block;
+}
+.news-item {
+  z-index: 1000;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #030303;
+  color: rgb(235, 225, 173);
+}
+.news-item h3 {
+  margin: 8px 0 10px;
+}
+
+.news-item a{
+  padding: 10px;
+  margin: auto;
+  margin-left: 850px;
+}
+
+.noticias{
+  padding: 10px;
+}
+
+
+.noticias p{
+  text-align: center;
+  text-indent: 0%;
+}
+
+/************************************ FORMULARIO 1 **************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.form-section label {
+  display: block;
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+.form-section input,
+.form-section select {
+  width: 35%;
+  height: 50%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #FFFDD0;
+  color: rgb(7, 7, 7);
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: transform 0.6s ease;
+}
+
+form button:hover {
+  background-color: #aab9ab;
+  transform: rotate(360deg);
+}
+
+.error-box {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+form {
+  position: relative;
+  z-index: 5;  
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 8px;
+  width: 60%;
+  margin: 20px auto;
+  margin-top: 60px;
+  font-size: 1rem;
+}
+
+/* Estilos generales para los inputs */
+
+input[type="text"], input[type="email"], input[type="number"], select {
+  width: 25%;  
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Ajustes para los inputs de tipo radio y checkbox */
+
+input[type="checkbox"], input[type="radio"] {
+  width: 15px;  
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: block;
+  text-decoration: underline;
+}
+
+select{
+  font-size: 1rem;
+}
+
+#presupuestoFinal{
+  font-size: 0.8rem;
+}
+
+#plazo{
+  font-size: 0.8rem;
+}
+
+#presupuestoForm{
+  text-align: center;
+  width: 45%;
+}
+
+
+/************************************** CONTACTO ************************************************/
+/************************************************************************************************/
+/************************************************************************************************/
+/************************************************************************************************/
+
+
+#map {
+  height: 300px;
+  width: 100%;
+  margin-top: 50px;
+  z-index: 2;
+  zoom: 1.1;
+}
+
+.contact-info {
+  font-size: 0.8rem;
+  margin: 10px;
+  padding: 10px;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #c51f30;
+}
+
+.contact-info h3 {
+  margin-top: 0;
+}
+
+.leaflet-popup-content-wrapper{
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+.leaflet-routing-alt h2{
+  color: black;
+  background-color: beige;
+}
