@@ -28,12 +28,20 @@ function validarContacto() {
         errores.push('El correo electrónico no es válido.');
     }
 
-    if (errores.length > 0) {
-        mostrarErrores(errores);
-        return false;
+    return errores;
+}
+
+// Validación del plazo
+
+function validarPlazo() {
+    let errores = [];
+    const plazo = parseInt(document.getElementById('plazo').value);
+
+    if (isNaN(plazo) || plazo <= 0) {
+        errores.push('El plazo debe ser un número mayor a 0.');
     }
 
-    return true;
+    return errores;
 }
 
 // Mostrar los errores en el cuadro de diálogo
@@ -83,15 +91,24 @@ function enviarFormulario() {
     // Limpiar cualquier error previo
     document.getElementById('errorBox').style.display = 'none';
 
-    if (!validarContacto()) {
-        return;
+    // Obtener los errores de la validación de contacto y plazo
+    let errores = [];
+    errores = errores.concat(validarContacto());  // Validación de los campos de contacto
+    errores = errores.concat(validarPlazo());  // Validación del plazo
+
+    // Si hay errores, mostrarlos y evitar el envío
+    if (errores.length > 0) {
+        mostrarErrores(errores);
+        return; // Detener el envío del formulario si hay errores
     }
 
+    // Verificar si se han aceptado las condiciones
     if (!document.getElementById('condiciones').checked) {
         alert('Debes aceptar las condiciones de privacidad.');
         return;
     }
 
+    // Si todo está bien, mostrar mensaje y reiniciar el formulario
     alert('Formulario enviado correctamente!');
     document.getElementById('presupuestoForm').reset();
 }
