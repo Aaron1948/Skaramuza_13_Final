@@ -702,7 +702,7 @@ form {
 /* Estilos generales para los inputs */
 
 input[type="text"], input[type="email"], input[type="number"], select {
-  width: 25%;  
+  width: 35%;  
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
@@ -733,6 +733,7 @@ select{
 
 #presupuestoFinal{
   font-size: 0.8rem;
+  width: 10%;  
 }
 
 #plazo{
