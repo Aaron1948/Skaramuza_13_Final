@@ -24,6 +24,113 @@
     height: auto; 
   }
 
+/************************************** MEDIA QUERY *****************************************************/
+/********************************************************************************************************/
+
+/* Para dispositivos móviles y pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Ocultar el logo */
+  .logo {
+    display: flex;
+  }
+
+  /* Slider oculto */
+  .slider{
+    display: none;
+  }
+  /* Imagenes Index Hover */
+  body img:hover{
+    transform: none !important;
+  }
+
+  .localidad img{
+    width: 200px !important;
+  }
+
+  body img{
+    padding: 10px;
+    margin: 10px;
+  }
+  .setup2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px;
+  }
+
+  /* Menu desplegable oculto */
+  .dropdown li{
+    display: none;
+  }
+
+  /* Ocultar el título H1 */
+  #titulo {
+      display: none;
+  }
+
+  /* Asegurar que el navbar sigue siendo visible */
+  .navigationBar {
+      display: flex;
+      justify-content: center;
+  }
+
+  /* Asegurar que los enlaces del menú se muestran correctamente */
+  .navigationBarList {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+      padding: 0;
+  }
+
+  .navigationBarList li {
+      list-style-type: none;
+  }
+
+  .navigationBarList a {
+      text-align: center;
+      padding: 10px;
+  }
+
+  .news-item a{
+    margin-left: 120px !important;
+  }
+
+
+  footer img{
+    display: none !important;
+  }
+
+
+  /* MAPA ONLINE */
+  #map{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+  }
+
+  #map h2, table{
+    display: none;
+  }
+
+  /* PRESUPUESTO */
+
+  .form-section{
+
+  }
+  #presupuestoForm input{
+    width: 150px;
+  }
+
+  #prepupuestoForm{
+    width: 100%;
+  }
+  #presupuestoFinal{
+    width: 30% !important;
+  }
+  form button:hover {
+    transform: none !important;
+  }  
+}
     
 
 /*********************************************FUENTES*******************************************************/
