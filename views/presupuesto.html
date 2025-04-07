@@ -49,6 +49,7 @@
             </ul>
         </nav>
     </header>
+
     <!-- FORMULARIO Y PRESUPUESTO -->
      
     <form id="presupuestoForm">
@@ -70,8 +71,7 @@
 
         <!-- Sección 2: Presupuesto -->
         <div class="form-section">
-            <h2>Presupuesto</h2>
-
+            <h2 class="presuH">Presupuesto</h2>
             <!-- Producto -->
             <label for="producto">Producto:</label>
             <select id="producto" name="producto" onchange="calcularPresupuesto()">
@@ -79,19 +79,20 @@
                 <option value="100">(24h)Entrada Maquinas Arcade + SetUp - 100€</option>
                 <option value="150">Todos los Eventos - 150€</option>
             </select>
-
             <!-- Plazo -->
             <label for="plazo">Plazo (meses):</label>
             <input type="number" id="plazo" name="plazo" min="1" onchange="calcularPresupuesto()">
-
             <!-- Descuentos de 1 a 12 Meses -->
-            <label>1 Mes 30%, 6 o menos 20% , 12 Meses 10%</label>
-
+            <h2 class="presuH">Descuentos</h2>
+            <p class="descuentos"><span class="descuento">30%</span> de descuento para los primeros 3 meses<br>
+                <span class="descuento">25%</span> de descuento para los siguientes 3 meses (4-6 meses)<br>
+                <span class="descuento">15%</span> de descuento para los siguientes 5 meses (7-11 meses)<br>
+                <span class="descuento">10%</span> de descuento para plazos de 12 meses o más..</p>
             <!-- Extras -->
             <label>Extras:</label>
-            <input type="checkbox" id="extra1" name="extras" value="25" onchange="calcularPresupuesto()"> Acompañante (+25€)<br>
-            <input type="checkbox" id="extra2" name="extras" value="50" onchange="calcularPresupuesto()"> Entrada Regalo 24h (+50€)<br>
-            <input type="checkbox" id="extra3" name="extras" value="120" onchange="calcularPresupuesto()"> 1 año Socio-VIP (+120€)<br>
+            <input type="checkbox" id="extra1" name="extras" value="25" onchange="calcularPresupuesto()"> Acompañante (+25€)
+            <input type="checkbox" id="extra2" name="extras" value="50" onchange="calcularPresupuesto()"> Entrada Regalo 24h (+50€)
+            <input type="checkbox" id="extra3" name="extras" value="120" onchange="calcularPresupuesto()"> 1 año Socio-VIP (+120€)
 
             <!-- Presupuesto Final -->
             <label for="presupuestoFinal">Presupuesto Final:</label>
@@ -102,7 +103,7 @@
         <div class="form-section">
             <label for="condiciones">
                 <input type="checkbox" id="condiciones" required> Acepto las condiciones de privacidad
-            </label><br>
+            </label>
             
             <button type="button" onclick="enviarFormulario()">Enviar</button>
             <button type="reset">Reiniciar</button>
@@ -123,7 +124,7 @@
         <footer>
             <p>Todos los Derechos Reservados</p>
             <a href="https://twitter.com/Skaramuza13" target="_blank"><img class="x-image" src="../assets/images/logos/logo_twitter.png" alt="logo de X" height="980" width="980"></a>
-            <a href="https://facebook.com/Skaramuza13" target="_blank"><img class="f-image" src="../assets/images/logos/logo_facebooooooook.png" alt="logo de facebook" height="250" width="250"></a>
+            <a href="https://facebook.com/Skaramuza13" target="_blank"><img class="f-image" src="../assets/images/logos/logo_facebooooooook.png" alt="logo de facebook" height="2000" width="2000"></a>
         </footer>
     </div>
 
