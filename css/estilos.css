@@ -24,12 +24,46 @@
     height: auto; 
   }
 
+    
+
+/*********************************************FUENTES*******************************************************/
+/***********************************************************************************************************/
+
+@font-face {
+    font-family: "Teko";
+    src: url(../Fonts/Teko-VariableFont_wght.ttf);
+}
+
+
+@font-face {
+    font-family: "Lexend";
+    src: url(../Fonts/Lexend-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "SixtyFour";
+    src: url(../Fonts/SixtyfourConvergence-Regular-VariableFont_BLED\,SCAN\,XELA\,YELA.ttf);
+}
+
+
+/*************************************** LOGO *********************************************************/
+/******************************************************************************************************/
+
+.logo{
+  width: 150px;
+  height: 100px;
+  margin-left: 3.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 5px;
+}
+
 /************************************** MEDIA QUERY *****************************************************/
 /********************************************************************************************************/
 
 /* Para dispositivos móviles y pantallas pequeñas */
 @media (max-width: 768px) {
-  /* Ocultar el logo */
+  /* Logo ON */
   .logo {
     display: flex;
   }
@@ -47,6 +81,7 @@
     width: 200px !important;
   }
 
+  /* Imagenes sin Hover */
   body img{
     padding: 10px;
     margin: 10px;
@@ -131,40 +166,6 @@
     transform: none !important;
   }  
 }
-    
-
-/*********************************************FUENTES*******************************************************/
-/***********************************************************************************************************/
-
-@font-face {
-    font-family: "Teko";
-    src: url(../Fonts/Teko-VariableFont_wght.ttf);
-}
-
-
-@font-face {
-    font-family: "Lexend";
-    src: url(../Fonts/Lexend-VariableFont_wght.ttf);
-}
-
-@font-face {
-    font-family: "SixtyFour";
-    src: url(../Fonts/SixtyfourConvergence-Regular-VariableFont_BLED\,SCAN\,XELA\,YELA.ttf);
-}
-
-
-/*************************************** LOGO *********************************************************/
-/******************************************************************************************************/
-
-.logo{
-  width: 150px;
-  height: 100px;
-  margin-left: 3.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding: 5px;
-}
-
 
 
 /***********************************************HEADER***************************************************/
@@ -822,14 +823,14 @@ input[type="text"], input[type="email"], input[type="number"], select {
 input[type="checkbox"], input[type="radio"] {
   width: 15px;  
   height: 20px;
-  margin-right: 10px;
+  margin-right: 5px;
   vertical-align: middle;
   margin-bottom: 15px;
 }
 
 label {
   font-size: 1rem;
-  margin-bottom: 10px;
+  font-weight: 900;
   display: block;
   text-decoration: underline;
 }
@@ -840,7 +841,7 @@ select{
 
 #presupuestoFinal{
   font-size: 0.8rem;
-  width: 10%;  
+  width: 10%;
 }
 
 #plazo{
@@ -849,11 +850,27 @@ select{
 
 #presupuestoForm{
   text-align: center;
-  width: 45%;
+  width: 49%;
 }
 
 #presupuestoForm h2{
   margin-bottom: 2rem;
+  margin-top: 15px;
+}
+
+.descuentos{
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.descuento{
+  color: red;
+}
+
+.presuH{
+  margin: 0;
+  padding: 0;
 }
 
 /************************************** CONTACTO ************************************************/
