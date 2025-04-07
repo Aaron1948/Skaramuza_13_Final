@@ -63,16 +63,24 @@ function calcularPresupuesto() {
 
     let descuento = 0;
 
+    // 30% de descuento para los primeros 3 meses
+    if (plazo >= 1 && plazo <= 3) {
+        descuento = 0.3;  // 30% de descuento si el plazo es entre 1 y 3 meses
+    }
+
+    // 25% de descuento para los siguientes 3 meses (4-6 meses)
+    if (plazo >= 4 && plazo <= 6) {
+        descuento = 0.25;  // 25% de descuento si el plazo es entre 4 y 6 meses
+    }
+
+    // 15% de descuento para los siguientes 5 meses (7-11 meses)
+    if (plazo >= 7 && plazo <= 11) {
+        descuento = 0.15;  // 15% de descuento si el plazo es entre 7 y 11 meses
+    }
+
+    // 10% de descuento para plazos de 12 meses o más
     if (plazo >= 12) {
-        descuento = 0.1;  // 10% de descuento si es un plazo de 12 meses o más
-    }
-
-    if(plazo <= 6) {
-        descuento = 0.2;  // 20% de descuento si es un plazo de 6 meses o menos
-    }
-
-    if(plazo === 1){
-        descuento = 0.3;  // 30% de descuento si es un plazo de 1 mes.
+        descuento = 0.1;  // 10% de descuento si el plazo es de 12 meses o más
     }
 
     const totalExtras = extra1 + extra2 + extra3;
