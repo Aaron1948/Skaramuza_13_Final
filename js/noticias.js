@@ -1,7 +1,7 @@
 // NOTICIAS
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("news.json")
+    fetch("../aasets/news.json")
         .then(response => response.json())
         .then(data => {
             const newsSection = document.getElementById("news-section");
