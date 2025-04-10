@@ -1,5 +1,55 @@
-// Validación de los campos de contacto
+// Función para calcular el presupuesto
+function calcularPresupuesto() {
+    const productoSelect = document.getElementById('producto');
+    const producto = parseFloat(productoSelect.value);  // Producto seleccionado
+    const plazo = document.getElementById('plazo').value;  // Plazo de entrega en meses
+    const extra1 = document.getElementById('extra1').checked ? parseFloat(document.getElementById('extra1').value) : 0;
+    const extra2 = document.getElementById('extra2').checked ? parseFloat(document.getElementById('extra2').value) : 0;
+    const extra3 = document.getElementById('extra3').checked ? parseFloat(document.getElementById('extra3').value) : 0;
 
+    // Validar que el producto ha sido seleccionado
+    if (!producto) {
+        alert("Por favor, selecciona un producto.");
+        return;
+    }
+
+    // Sumar el total de extras seleccionados
+    const totalExtras = extra1 + extra2 + extra3;
+
+    // El presupuesto inicial es la suma del precio del producto y los extras
+    let presupuesto = producto + totalExtras;
+
+    // Descuento solo si el plazo es válido (número positivo)
+    let descuento = 0;
+
+    // Verificar si el campo plazo tiene un valor válido
+    if (plazo === "" || isNaN(plazo) || plazo <= 0) {
+        // Si el plazo está vacío o no es un valor numérico válido, no se aplica descuento
+        descuento = 0;
+    } else {
+        // Convertir el plazo a número entero para evitar posibles decimales
+        const plazoNum = parseInt(plazo);
+
+        // Aplicar descuento según el valor del plazo
+        if (plazoNum >= 1 && plazoNum <= 3) {
+            descuento = 0.3;  // 30% de descuento si el plazo es entre 1 y 3 meses
+        } else if (plazoNum >= 4 && plazoNum <= 6) {
+            descuento = 0.25; // 25% de descuento si el plazo es entre 4 y 6 meses
+        } else if (plazoNum >= 7 && plazoNum <= 11) {
+            descuento = 0.15; // 15% de descuento si el plazo es entre 7 y 11 meses
+        } else if (plazoNum >= 12) {
+            descuento = 0.1;  // 10% de descuento si el plazo es de 12 meses o más
+        }
+    }
+
+    // Aplicar el descuento (si corresponde)
+    presupuesto -= presupuesto * descuento;
+
+    // Mostrar el presupuesto final con dos decimales
+    document.getElementById('presupuestoFinal').value = presupuesto.toFixed(2) + '€';
+}
+
+// Validación de los campos de contacto
 function validarContacto() {
     let errores = [];
     const nombre = document.getElementById('nombre').value;
@@ -32,7 +82,6 @@ function validarContacto() {
 }
 
 // Validación del plazo
-
 function validarPlazo() {
     let errores = [];
     const plazo = parseInt(document.getElementById('plazo').value);
@@ -45,56 +94,13 @@ function validarPlazo() {
 }
 
 // Mostrar los errores en el cuadro de diálogo
-
 function mostrarErrores(errores) {
     const errorBox = document.getElementById('errorBox');
     errorBox.innerHTML = errores.join('<br>');
     errorBox.style.display = 'block';
 }
 
-// Función para calcular el presupuesto
-
-function calcularPresupuesto() {
-    const producto = parseFloat(document.getElementById('producto').value);
-    const plazo = parseInt(document.getElementById('plazo').value) || 1;
-    const extra1 = document.getElementById('extra1').checked ? parseFloat(document.getElementById('extra1').value) : 0;
-    const extra2 = document.getElementById('extra2').checked ? parseFloat(document.getElementById('extra2').value) : 0;
-    const extra3 = document.getElementById('extra3').checked ? parseFloat(document.getElementById('extra3').value) : 0;
-
-    let descuento = 0;
-
-    // 30% de descuento para los primeros 3 meses
-    if (plazo >= 1 && plazo <= 3) {
-        descuento = 0.3;  // 30% de descuento si el plazo es entre 1 y 3 meses
-    }
-
-    // 25% de descuento para los siguientes 3 meses (4-6 meses)
-    if (plazo >= 4 && plazo <= 6) {
-        descuento = 0.25;  // 25% de descuento si el plazo es entre 4 y 6 meses
-    }
-
-    // 15% de descuento para los siguientes 5 meses (7-11 meses)
-    if (plazo >= 7 && plazo <= 11) {
-        descuento = 0.15;  // 15% de descuento si el plazo es entre 7 y 11 meses
-    }
-
-    // 10% de descuento para plazos de 12 meses o más
-    if (plazo >= 12) {
-        descuento = 0.1;  // 10% de descuento si el plazo es de 12 meses o más
-    }
-
-    const totalExtras = extra1 + extra2 + extra3;
-    let presupuesto = producto + totalExtras;
-
-    // Aplicar descuento sobre el presupuesto
-
-    presupuesto -= presupuesto * descuento;
-
-    document.getElementById('presupuestoFinal').value = presupuesto.toFixed(2) + '€';
-}
-
 // Función para enviar el formulario
-
 function enviarFormulario() {
     // Limpiar cualquier error previo
     document.getElementById('errorBox').style.display = 'none';
@@ -120,3 +126,20 @@ function enviarFormulario() {
     alert('Formulario enviado correctamente!');
     document.getElementById('presupuestoForm').reset();
 }
+
+// Evento de cambio en el producto
+document.getElementById('producto').addEventListener('change', calcularPresupuesto);
+
+// Evento de cambio en el plazo
+document.getElementById('plazo').addEventListener('input', calcularPresupuesto);
+
+// Evento de cambio en los extras
+document.getElementById('extra1').addEventListener('change', calcularPresupuesto);
+document.getElementById('extra2').addEventListener('change', calcularPresupuesto);
+document.getElementById('extra3').addEventListener('change', calcularPresupuesto);
+
+// Evento de envío del formulario
+document.getElementById('presupuestoForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevenir el envío por defecto del formulario
+    enviarFormulario();
+});
